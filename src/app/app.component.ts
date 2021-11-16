@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  transferencia: any = {};
+  transferencias: any[] = [];
 
   transferir($event: any) {
     console.log('Este mensaje es del componente APP', $event);
-    this.transferencia = $event;
+    this.transferencias.push($event);
   }
 }

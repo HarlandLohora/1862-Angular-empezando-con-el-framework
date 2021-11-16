@@ -15,6 +15,7 @@ export class NuevaTransferenciaComponent {
     const datos = {
       valor: this.valor,
       destino: this.destino,
+      fecha: new Date(),
     };
     this.enviarDatos.emit(datos);
     this.limpiarCampos();
