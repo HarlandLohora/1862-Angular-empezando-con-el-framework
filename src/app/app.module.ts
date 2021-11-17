@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NuevaTransferenciaComponent } from './NuevaTransferencia/nueva-transferencia.component';
 import { EstadoCuentaComponent } from './estado-cuenta/estado-cuenta.component';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeEs, 'es');
 @NgModule({
@@ -14,7 +15,7 @@ registerLocaleData(localeEs, 'es');
     NuevaTransferenciaComponent,
     EstadoCuentaComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
     {
       provide: LOCALE_ID,
