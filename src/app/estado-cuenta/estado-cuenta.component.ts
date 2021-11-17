@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TransferenciasService } from '../services/transferencias.service';
 
 @Component({
   selector: 'app-estado-cuenta',
@@ -6,9 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./estado-cuenta.component.scss'],
 })
 export class EstadoCuentaComponent implements OnInit {
-  @Input() transferencias: any[] = [];
+  transferencias: any[] = [];
 
-  constructor() {}
+  constructor(private service: TransferenciasService) {
+    this.transferencias = this.service.transferencias;
+  }
 
   ngOnInit(): void {}
 }
