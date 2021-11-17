@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TransferenciasService } from '../services/transferencias.service';
 import { Transferencia } from '../models/transferencia.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nueva-transferencia',
@@ -8,7 +9,7 @@ import { Transferencia } from '../models/transferencia.model';
   styleUrls: ['./nueva-transferencia.component.scss'],
 })
 export class NuevaTransferenciaComponent {
-  constructor(private service: TransferenciasService) {}
+  constructor(private service: TransferenciasService, private router: Router) {}
 
   valor: string = '';
   destino: string = '';
@@ -21,8 +22,8 @@ export class NuevaTransferenciaComponent {
     };
 
     this.service.agregar(datos).subscribe(
-      (respuesta) => {
-        console.log(respuesta);
+      () => {
+        this.router.navigateByUrl('estado');
       },
       (err) => console.log(err)
     );
